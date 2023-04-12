@@ -16,12 +16,11 @@ import DateHead from './components/DateHead';
 
 function App(): JSX.Element {
   const today = new Date();
-  console.log(today);
 
   return (
-    <SafeAreaView>
-      <DateHead />
-    </SafeAreaView>
+    <View style={{flex: 1}}>
+      <DateHead date={today} />
+    </View>
   );
 }
 
