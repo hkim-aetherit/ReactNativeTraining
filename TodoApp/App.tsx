@@ -6,21 +6,19 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  Text,
-  View,
-  StyleSheet
-} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import DateHead from './components/DateHead';
 
 function App(): JSX.Element {
   const today = new Date();
 
   return (
-    <View style={{flex: 1}}>
-      <DateHead date={today} />
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView>
+        <DateHead date={today} />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
